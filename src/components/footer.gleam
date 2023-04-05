@@ -20,7 +20,7 @@ pub fn default() {
   let links = [
     #("Home", [attrs.href("/")]),
     #("Docs", [attrs.href("https://hexdocs.pm/nakai/")]),
-    #("Github", [attrs.href("https://github.com/nakaibuild")]),
+    #("Github", [attrs.href("https://github.com/nakaixo")]),
     #(
       "Discord",
       [

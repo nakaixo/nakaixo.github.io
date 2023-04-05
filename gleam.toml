@@ -1,14 +1,14 @@
-name = "nakai_build"
+name = "nakaixo"
 version = "1.0.0"
 licences = ["MIT"]
 description = "Our website (written using Nakai) ✨"
-repository = { type = "github", user = "nakaibuild", repo = "nakai.build" }
-
-target = "javascript"
+repository = { type = "github", user = "nakaixo", repo = "nakaixo.github.io" }
 
 [dependencies]
-gleam_stdlib = "~> 0.22"
-nakai = "~> 0.3"
+gleam_erlang = "~> 0.18"
+gleam_stdlib = "~> 0.28"
+nakai = "~> 0.4"
+gleam_community_ansi = "~> 1.1"
 
 [dev-dependencies]
-gleeunit = "~> 0.6"
+gleeunit = "~> 0.10"

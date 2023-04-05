@@ -49,6 +49,11 @@ pub fn document(children: List(Node(a))) {
     head.title("Nakai. ✨"),
     html.head([
       // html.link([attrs.rel("stylesheet"), attrs.href("/style.css")]),
+
+      html.link([
+        attrs.rel("stylesheet"),
+        attrs.href("https://unpkg.com/prismjs@1.29.0/themes/prism.min.css"),
+      ]),
       metadata(),
     ]),
     html.body(
@@ -65,12 +70,35 @@ pub fn document(children: List(Node(a))) {
           [attrs.style(container_style)],
           [html.Fragment(children), footer.default()],
         ),
+        html.Element(
+          "script",
+          [
+            attrs.src(
+              "https://unpkg.com/prismjs@1.29.0/components/prism-core.min.js",
+            ),
+          ],
+          [],
+        ),
+        html.Element(
+          "script",
+          [attrs.src("https://mckayla.blog/prismjs-gleam.js")],
+          [],
+        ),
+        html.Element(
+          "script",
+          [
+            attrs.src(
+              "https://unpkg.com/prismjs@1.29.0/components/prism-autoloader.min.js",
+            ),
+          ],
+          [],
+        ),
       ],
     ),
   ])
 }
 
-fn og_meta(property property: String, content: String) -> Node(a) {
+fn og_meta(property: String, content: String) -> Node(a) {
   html.meta([
     attrs.property(string.append("og:", property)),
     attrs.content(content),
@@ -84,12 +112,9 @@ fn metadata() {
       attrs.Attr("content", "width=device-width, initial-scale=1"),
     ]),
     og_meta("title", "Nakai. ✨"),
-    og_meta(
-      "description",
-      "A server-side rendering framework for building web apps with Gleam ✨",
-    ),
+    og_meta("description", "A library for building web apps with Gleam ✨"),
     og_meta("type", "website"),
-    og_meta("url", "https://nakai.build"),
+    og_meta("url", "https://nakaixo.github.io"),
     og_meta(
       "image",
       "https://cdn.mckayla.cloud/-/f648cf5b6eee40b2982410757909716e/Nakai-Banner@2x.webp",
