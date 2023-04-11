@@ -81,7 +81,7 @@ pub fn document(children: List(Node(a))) {
         ),
         html.Element(
           "script",
-          [attrs.src("https://mckayla.blog/prismjs-gleam.js")],
+          [attrs.src("https://unpkg.com/prismjs-gleam@1/gleam.js")],
           [],
         ),
         html.Element(
