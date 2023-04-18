@@ -5,7 +5,7 @@ import components/header
 import pages/base
 
 const example = "html.div_text([], \"Hello, Lucy!\")
-|> nakai.render()
+|> nakai.to_string()
 |> file.write(\"index.html\")"
 
 pub fn page() {

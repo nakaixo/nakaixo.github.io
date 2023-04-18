@@ -7,7 +7,7 @@ repository = { type = "github", user = "nakaixo", repo = "nakaixo.github.io" }
 [dependencies]
 gleam_erlang = "~> 0.18"
 gleam_stdlib = "~> 0.28"
-nakai = "~> 0.5"
+nakai = "~> 0.6"
 gleam_community_ansi = "~> 1.1"
 
 [dev-dependencies]

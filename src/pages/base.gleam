@@ -1,5 +1,4 @@
 import gleam/string
-import nakai/head
 import nakai/html.{Node}
 import nakai/html/attrs
 import components/footer
@@ -46,8 +45,8 @@ const container_style = "
 
 pub fn document(children: List(Node(a))) {
   html.Fragment([
-    head.title("Nakai. ✨"),
     html.Head([
+      html.title("Nakai. ✨"),
       // html.link([attrs.rel("stylesheet"), attrs.href("/style.css")]),
 
       html.link([
