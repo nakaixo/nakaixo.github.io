@@ -29,7 +29,10 @@ pub fn page() {
 
   let make_prose = fn(details) {
     let #(question, answer, attrs) = details
-    html.p([], [html.Text(question), html.space(), html.a_text(attrs, answer)])
+    html.p(
+      [],
+      [html.Text(question), html.Text(" "), html.a_text(attrs, answer)],
+    )
   }
 
   base.document([

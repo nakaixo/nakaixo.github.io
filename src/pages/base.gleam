@@ -47,7 +47,7 @@ const container_style = "
 pub fn document(children: List(Node(a))) {
   html.Fragment([
     head.title("Nakai. ✨"),
-    html.head([
+    html.Head([
       // html.link([attrs.rel("stylesheet"), attrs.href("/style.css")]),
 
       html.link([
