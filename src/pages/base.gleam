@@ -55,7 +55,7 @@ pub fn document(children: List(Node(a))) {
       ]),
       metadata(),
     ]),
-    html.body(
+    html.Body(
       [attrs.style(body_style)],
       [
         html.img([

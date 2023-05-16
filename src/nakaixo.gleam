@@ -1,6 +1,5 @@
 import gleam/erlang/file
 import gleam/io
-import gleam/result
 import gleam_community/ansi
 import nakai
 import pages/index
@@ -27,8 +26,8 @@ pub fn make_page(route: String) {
 
 pub fn main() {
   io.println(ansi.green("==>") <> " Building to output/")
-  use _ <- result.then(mkdir("output/"))
-  use _ <- result.then(make_page("index.html"))
-  use _ <- result.then(make_page("404.html"))
+  let assert Ok(_) = mkdir("output/")
+  let assert Ok(_) = make_page("index.html")
+  let assert Ok(_) = make_page("404.html")
   Ok(Nil)
 }
