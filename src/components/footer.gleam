@@ -1,6 +1,6 @@
 import gleam/list
-import nakai/html
 import nakai/attr
+import nakai/html
 
 const footer_style = "
   color: #999;

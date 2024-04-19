@@ -1,7 +1,7 @@
-import gleam/string
-import nakai/html.{type Node}
-import nakai/attr
 import components/footer
+import gleam/string
+import nakai/attr
+import nakai/html.{type Node}
 
 const body_style = "
   font-family: 'Nunito', sans-serif;

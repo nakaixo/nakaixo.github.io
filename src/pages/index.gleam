@@ -1,7 +1,7 @@
-import gleam/list
-import nakai/html
-import nakai/attr
 import components/header
+import gleam/list
+import nakai/attr
+import nakai/html
 import pages/base
 
 const example = "html.div_text([], \"Hello, Lucy!\")

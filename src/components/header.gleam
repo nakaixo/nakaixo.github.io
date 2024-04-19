@@ -1,5 +1,5 @@
-import nakai/html
 import nakai/attr
+import nakai/html
 
 const default_style = "
   color: #331f26;

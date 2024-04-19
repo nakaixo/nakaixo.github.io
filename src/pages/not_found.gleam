@@ -1,5 +1,5 @@
-import nakai/html
 import components/header
+import nakai/html
 import pages/base
 
 pub fn page() {
