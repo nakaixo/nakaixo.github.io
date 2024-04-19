@@ -1,5 +1,5 @@
 import nakai/html
-import nakai/html/attrs
+import nakai/attr
 
 const default_style = "
   color: #331f26;
@@ -9,5 +9,5 @@ const default_style = "
 "
 
 pub fn default(text: String) {
-  html.h1_text([attrs.style(default_style)], text)
+  html.h1_text([attr.style(default_style)], text)
 }

@@ -1,6 +1,6 @@
 import gleam/string
-import nakai/html.{Node}
-import nakai/html/attrs
+import nakai/html.{type Node}
+import nakai/attr
 import components/footer
 
 const body_style = "
@@ -43,72 +43,69 @@ const container_style = "
   padding: 24px;
 "
 
-pub fn document(children: List(Node(a))) {
+pub fn document(children: List(Node)) {
   html.Fragment([
     html.Head([
       html.title("Nakai. ✨"),
       // html.link([attrs.rel("stylesheet"), attrs.href("/style.css")]),
 
       html.link([
-        attrs.rel("stylesheet"),
-        attrs.href("https://unpkg.com/prismjs@1.29.0/themes/prism.min.css"),
+        attr.rel("stylesheet"),
+        attr.href("https://unpkg.com/prismjs@1.29.0/themes/prism.min.css"),
       ]),
       metadata(),
     ]),
-    html.Body(
-      [attrs.style(body_style)],
-      [
-        html.img([
-          attrs.style(cover_image_style),
-          attrs.src(
-            "https://cdn.mckayla.cloud/-/f648cf5b6eee40b2982410757909716e/Nakai-Background.svg",
+    html.Body([attr.style(body_style)], [
+      html.img([
+        attr.style(cover_image_style),
+        attr.src(
+          "https://cdn.mckayla.cloud/-/f648cf5b6eee40b2982410757909716e/Nakai-Background.svg",
+        ),
+      ]),
+      html.div([attr.style(cover_gradient_style)], []),
+      html.div([attr.style(container_style)], [
+        html.Fragment(children),
+        footer.default(),
+      ]),
+      html.Element(
+        "script",
+        [
+          attr.src(
+            "https://unpkg.com/prismjs@1.29.0/components/prism-core.min.js",
           ),
-        ]),
-        html.div([attrs.style(cover_gradient_style)], []),
-        html.div(
-          [attrs.style(container_style)],
-          [html.Fragment(children), footer.default()],
-        ),
-        html.Element(
-          "script",
-          [
-            attrs.src(
-              "https://unpkg.com/prismjs@1.29.0/components/prism-core.min.js",
-            ),
-          ],
-          [],
-        ),
-        html.Element(
-          "script",
-          [attrs.src("https://unpkg.com/prismjs-gleam@1/gleam.js")],
-          [],
-        ),
-        html.Element(
-          "script",
-          [
-            attrs.src(
-              "https://unpkg.com/prismjs@1.29.0/components/prism-autoloader.min.js",
-            ),
-          ],
-          [],
-        ),
-      ],
-    ),
+        ],
+        [],
+      ),
+      html.Element(
+        "script",
+        [attr.src("https://unpkg.com/prismjs-gleam@1/gleam.js")],
+        [],
+      ),
+      html.Element(
+        "script",
+        [
+          attr.src(
+            "https://unpkg.com/prismjs@1.29.0/components/prism-autoloader.min.js",
+          ),
+        ],
+        [],
+      ),
+    ]),
   ])
 }
 
-fn og_meta(property: String, content: String) -> Node(a) {
+fn og_meta(property: String, content: String) -> Node {
   html.meta([
-    attrs.property(string.append("og:", property)),
-    attrs.content(content),
+    attr.property(string.append("og:", property)),
+    attr.content(content),
   ])
 }
 
 fn metadata() {
   html.Fragment([
     html.meta([
-      attrs.Attr("name", "viewport"),
-      attrs.Attr("content", "width=device-width, initial-scale=1"),
+      attr.Attr("name", "viewport"),
+      attr.Attr("content", "width=device-width, initial-scale=1"),
     ]),
     og_meta("title", "Nakai. ✨"),
     og_meta("description", "A library for building web apps with Gleam ✨"),
@@ -123,28 +120,28 @@ fn metadata() {
       "https://cdn.mckayla.cloud/-/f648cf5b6eee40b2982410757909716e/Nakai-Banner@2x.webp",
     ),
     html.link([
-      attrs.rel("shortcut icon"),
-      attrs.href(
+      attr.rel("shortcut icon"),
+      attr.href(
         "https://cdn.mckayla.cloud/-/f648cf5b6eee40b2982410757909716e/favicon.ico",
       ),
     ]),
     html.link([
-      attrs.rel("preconnect"),
-      attrs.href("https://fonts.googleapis.com"),
+      attr.rel("preconnect"),
+      attr.href("https://fonts.googleapis.com"),
     ]),
     html.link([
-      attrs.rel("preconnect"),
-      attrs.href("https://fonts.gstatic.com"),
-      attrs.crossorigin(),
+      attr.rel("preconnect"),
+      attr.href("https://fonts.gstatic.com"),
+      attr.crossorigin(),
     ]),
     html.link([
-      attrs.rel("preconnect"),
-      attrs.href("https://cdn.mckayla.cloud"),
-      attrs.crossorigin(),
+      attr.rel("preconnect"),
+      attr.href("https://cdn.mckayla.cloud"),
+      attr.crossorigin(),
     ]),
     html.link([
-      attrs.rel("stylesheet"),
-      attrs.href(
+      attr.rel("stylesheet"),
+      attr.href(
         "https://fonts.googleapis.com/css2?family=Neuton&family=Nunito&display=swap",
       ),
     ]),

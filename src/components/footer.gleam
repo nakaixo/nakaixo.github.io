@@ -1,6 +1,6 @@
 import gleam/list
 import nakai/html
-import nakai/html/attrs
+import nakai/attr
 
 const footer_style = "
   color: #999;
@@ -18,16 +18,13 @@ const link_list_style = "
 
 pub fn default() {
   let links = [
-    #("Home", [attrs.href("/")]),
-    #("Docs", [attrs.href("https://hexdocs.pm/nakai/")]),
-    #("Github", [attrs.href("https://github.com/nakaixo")]),
-    #(
-      "Discord",
-      [
-        attrs.href("https://discord.gg/Fm8Pwmy"),
-        attrs.title("It's just the Gleam Discord :p"),
-      ],
-    ),
+    #("Home", [attr.href("/")]),
+    #("Docs", [attr.href("https://hexdocs.pm/nakai/")]),
+    #("Github", [attr.href("https://github.com/nakaixo")]),
+    #("Discord", [
+      attr.href("https://discord.gg/Fm8Pwmy"),
+      attr.title("It's just the Gleam Discord :p"),
+    ]),
   ]
 
   let make_link = fn(details) {
@@ -35,15 +32,12 @@ pub fn default() {
     html.li([], [html.a_text(attrs, name)])
   }
 
-  html.footer(
-    [attrs.style(footer_style)],
-    [
-      html.span_text([], "Made with 💕 by queer people 🏳️‍🌈"),
-      html.ul(
-        [attrs.style(link_list_style)],
-        links
+  html.footer([attr.style(footer_style)], [
+    html.span_text([], "Made with 💕 by queer people 🏳️‍🌈"),
+    html.ul(
+      [attr.style(link_list_style)],
+      links
         |> list.map(make_link),
-      ),
-    ],
-  )
+    ),
+  ])
 }
