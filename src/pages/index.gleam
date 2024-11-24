@@ -11,10 +11,10 @@ const example = "html.div_text([], \"Hello, Lucy!\")
 pub fn page() {
   let prose = [
     #("Run into a bug?", "Report it!", [
-      attr.href("https://github.com/nakaixo/nakai/issues"),
+      attr.href("https://github.com/aslilac/nakai/issues"),
     ]),
     #("Want to contribute?", "Please do!", [
-      attr.href("https://github.com/nakaixo/nakai"),
+      attr.href("https://github.com/aslilac/nakai"),
     ]),
     #("Looking for our documentation?", "Over here!", [
       attr.href("https://hexdocs.pm/nakai/"),
