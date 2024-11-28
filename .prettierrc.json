@@ -1,5 +1,5 @@
 {
-	"printWidth": 90,
+	"proseWrap": "never",
 	"quoteProps": "consistent",
 	"tabWidth": 2,
 	"trailingComma": "all",
