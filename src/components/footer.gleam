@@ -2,20 +2,6 @@ import gleam/list
 import nakai/attr
 import nakai/html
 
-const footer_style = "
-  color: #999;
-  padding-top: 192px;
-  font-size: 18px;
-"
-
-const link_list_style = "
-  list-style-type: none;
-  padding-left: 0;
-  display: flex;
-  flex-direction: row;
-  gap: 24px;
-"
-
 pub fn default() {
   let links = [
     #("Home", [attr.href("/")]),
@@ -32,10 +18,10 @@ pub fn default() {
     html.li([], [html.a_text(attrs, name)])
   }
 
-  html.footer([attr.style(footer_style)], [
+  html.footer([attr.class("footer")], [
     html.span_text([], "Made with 💕 by queer people 🏳️‍🌈"),
     html.ul(
-      [attr.style(link_list_style)],
+      [attr.class("footer-links")],
       links
         |> list.map(make_link),
     ),

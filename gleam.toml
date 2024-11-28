@@ -1,14 +1,11 @@
 name = "nakaixo"
 version = "1.0.0"
 licences = ["MIT"]
-description = "Our website (written using Nakai) ✨"
+description = "A little website (written using Nakai) ✨"
 repository = { type = "github", user = "nakaixo", repo = "nakaixo.github.io" }
 
 [dependencies]
-gleam_community_ansi = "~> 1.1"
-gleam_stdlib = ">= 0.36.0 and < 2.0.0"
-nakai = "~> 0.10"
-simplifile = "~> 1.0"
-
-[dev-dependencies]
-gleeunit = "~> 1.0"
+gleam_community_ansi = "~> 1.4"
+gleam_stdlib = ">= 0.44.0 and < 2.0.0"
+nakai = "~> 1.1"
+simplifile = "~> 2.2"

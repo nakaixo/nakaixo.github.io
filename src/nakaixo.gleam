@@ -21,6 +21,7 @@ pub fn make_page(route: String) {
 pub fn main() {
   io.println(ansi.green("==>") <> " Building to output/")
   let assert Ok(_) = file.create_directory_all("output/")
+  let assert Ok(_) = file.copy_directory("src/public/", "output/")
   let assert Ok(_) = make_page("index.html")
   let assert Ok(_) = make_page("404.html")
   Ok(Nil)
